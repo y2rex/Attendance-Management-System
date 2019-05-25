@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+
+</head>
+<body>
+
+	<div class="container">
+<br>
+		<h1 class="text-center text-success"> Student Registration </h1><br>
+		<div class=" col-lg-8 m-auto d-block">
+			
+			<form class="bg-light" action="servlet/AddStudent" onsubmit=" return validation()">
+				
+				<div class="form-group">
+					<label> Rollno: </label>
+					<input type="text" name="roll" id="roll1" class="form-control" autocomplete="off">
+					<span id="roll2" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label> Name: </label>
+					<input type="text" name="uname" id="uname1" class="form-control" autocomplete="off">
+					<span id="uname2" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label> Semester: </label>
+					<input type="text" name="sem" id="sem1" class="form-control" autocomplete="off">
+					<span id="sem2" class="text-danger font-weight-bold">  </span>
+				</div>
+
+				<div class="form-group">
+					<label> Mobile Number: </label>
+					<input type="text" name="mbl" id="mbl1" class="form-control" autocomplete="off">
+					<span id="mbl2" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label> Attendance : </label>
+					<input type="text" name="att" id="att1" class="form-control" autocomplete="off">
+					<span id="att2" class="text-danger font-weight-bold"> </span>
+				</div>
+				<input type="submit" name="submit" value="Submit" class="btn btn-success">
+			</form>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">		
+		function validation(){
+
+			var roll = document.getElementById('roll1').value;
+			var uname = document.getElementById('uname1').value;
+			var sem = document.getElementById('sem1').value;
+			var mbl = document.getElementById('mbl1').value;
+			var att = document.getElementById('att1').value;
+
+			if( roll == "" ){
+				document.getElementById('roll2').innerHTML = " ** please fill the roll number...!!! ";
+				return false;
+			}
+			if(roll.length!=10){
+				document.getElementById('roll2').innerHTML = " ** Roll number should be 10 characters...!!!";
+				return false;
+               }
+				
+			if( uname == "" ){
+				document.getElementById('uname2').innerHTML = " ** please fill the Student name...!!! ";
+				return false;
+			}
+			if(( uname.length < 3) || (uname.length > 20)){
+				document.getElementById('uname2').innerHTML = " ** please fill the Student name must be in between 3 and 20 characters...!!!";
+				return false;
+			}
+
+			if(!isNaN(uname)){
+				document.getElementById('uname2').innerHTML = " ** please enter only character...!!!";
+				return false;
+			}
+			
+			if( sem == "" ){
+				document.getElementById('sem2').innerHTML = " ** please fill the Semesetr field...!!! ";
+				return false;
+			}
+			if(sem.length > 1){
+				document.getElementById('sem2').innerHTML = " ** semester have only one length of numeric...!!!";
+				return false;
+			}
+			if(isNaN(sem)){
+				document.getElementById('sem2').innerHTML = " ** Semester should conatins only numeric digit...!!! ";
+				return false;
+			}
+			
+			if( mbl == "" ){
+				document.getElementById('mbl2').innerHTML = " ** please fill the mobile number field...!!! ";
+				return false;
+			}
+
+			if(mbl.length!=10){
+				document.getElementById('mbl2').innerHTML = " ** Mobile number should be 10 digits ";
+				return false;
+			}
+			if(isNaN(mbl)){
+				document.getElementById('mbl2').innerHTML = " ** Mobile number should conatins only numeric digits...!!! ";
+				return false;
+			}
+			if( att == "" ){
+				document.getElementById('att2').innerHTML = " ** please fill the Semesetr field...!!! ";
+				return false;
+			}
+			if(att.length > 1){
+				document.getElementById('att2').innerHTML = " ** semester have only one length of numeric...!!!";
+				return false;
+			}
+			if(isNaN(att)){
+				document.getElementById('att2').innerHTML = " ** Semester should conatins only numeric digit...!!! ";
+				return false;
+			}
+		}
+
+	</script>
+</body>
+</html>

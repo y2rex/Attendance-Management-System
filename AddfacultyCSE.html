@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+
+</head>
+<body{
+background-size:cover;
+background-image:url("images/Error.png");
+   }
+	<div class="container"><br>
+		<h1 class="text-center text-success"> Student Registration </h1><br>
+		
+			
+			<form class="bg-light" action="servlet/AddFacultyCSE" onsubmit=" return validation()" method="post">
+				
+				<div class="form-group">
+					<label> User Id : </label>
+					<input type="text" name="uname" id="ui1" class="form-control" autocomplete="off">
+					<span id="ui2" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label> Password : </label>
+					<input type="password" name="pass" id="pass1" class="form-control" autocomplete="off">
+					<span id="pass2" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label> UserType : </label><span></span>
+					<select name="user">
+					  <option value="faculty">FACULTY</option>
+			        </select>
+				</div>
+
+				<div class="form-group">
+					<label> Branch : </label><span></span>
+					<select name="branch">
+					  <option value="cse">CSE</option>
+					  
+			        </select>
+				</div>	
+               <div class="form-group">
+					<label> Section : </label><span></span>
+					<select name="section">
+					  <option value="a">A</option>
+					  <option value="b">B</option>
+					  <option value="c">C</option>
+			        </select>
+				</div>					
+				<input type="submit" name="submit" value="Submit" class="btn btn-success">
+				</form>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">		
+		function validation(){
+
+			var ui = document.getElementById('ui1').value;
+			var pass = document.getElementById('pass1').value;
+			
+			if( roll == "" ){
+				document.getElementById('ui2').innerHTML = " ** please fill the user id...!!! ";
+				return false;
+			}
+				
+			if( uname == "" ){
+				document.getElementById('pass2').innerHTML = " ** please fill the password...!!! ";
+				return false;
+			}
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+
+pw.println("<html><head>");
+pw.println("<title></title><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>");
+pw.println("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>");
+pw.println("<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script>");
+
+
+
+pw.println("</head><body>");
+
+	pw.prinltn("<div class='container'><br>");
+		pw.println("<h1 class='text-center text-success'> Student Registration </h1><br>");
+		pw.println("<div class=' col-lg-8 m-auto d-block'><form class='bg-light' action='servlet/AddStudent' onsubmit=' return validation()'>");
+				
+				pw.println("<div class='form-group'><label> Rollno: </label><input type='text' name='roll' id='roll1' class='form-control' autocomplete='off'><span id='roll2' class='text-danger font-weight-bold'> </span></div>");
+
+				pw.println("<div class='form-group'><label> Name: </label><input type='text' name='uname' id='uname1' class='form-control' autocomplete='off'><span id='uname2' class='text-danger font-weight-bold'> </span></div>");
+
+				pw.println("<div class='form-group'><label> Semester: </label><input type='text' name='sem' id='sem1' class='form-control' autocomplete='off'><span id='sem2' class='text-danger font-weight-bold'>  </span></div>");
+
+				pw.println("<div class='form-group'><label> Mobile Number: </label><input type='text' name='mbl' id='mbl1' class='form-control' autocomplete='off'><span id='mbl2' class='text-danger font-weight-bold'> </span></div>");
+
+				pw.println("<div class='form-group'><label> Attendance : </label><input type='text' name='att' id='att1' class='form-control' autocomplete='off'><span id='att2' class='text-danger font-weight-bold'> </span></div>");
+				
+				pw.println("<input type='submit' name='submit' value='Submit' class='btn btn-success'></form></div></div>");
+
+
+pw.println("<script type='text/javascript'>function validation(){document.getElementById('roll1').disabled = true;}</script>");
+pw.println("</body></html>");

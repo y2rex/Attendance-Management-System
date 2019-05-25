@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #660000;
+	margin-left: 100px;
+	margin-top: 250px;
+	margin-right: 300px;
+	margin-bottom: 100px;
+}
+-->
+</style></head>
+
+<body>
+<form action="servlet/AddFaculty" method="post">
+<table width="263" border="2" cellpadding="5">
+  <tr>
+    <td width="85">UserID</td>
+    <td width="144">
+	<input type="text" name="uname" required/></td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td><input type="password" name="pass" required></td>
+  </tr>
+  
+  <tr>
+    <td>UserType</td>
+    <td><select name="utype">
+			  <option value="FACULTY">FACULTY</option>
+        </select>
+	</td>
+  </tr>
+  
+  <tr>
+    <td colspan="2"><div align="center">
+      <input type="submit" name="submit" value="SUBMIT" />
+    </div></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

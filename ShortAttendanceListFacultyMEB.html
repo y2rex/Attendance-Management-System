@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+
+</head>
+<body>
+
+	<div class="container"><br>
+		<h1 class="text-center text-success"> Short Attendence Report</h1><br>
+		<div class=" col-lg-5 m-auto d-block">
+			
+			<form class="bg-light" action="servlet/ShortAttendanceListFacultyMEB1" onsubmit=" return validation()" method="post">
+				
+				<div class="form-group">
+					<label> Lower limit of Attendance range : </label>
+					<input type="text" name="ll" id="id1" class="form-control" autocomplete="off">
+					<span id="id2" class="text-danger font-weight-bold"> </span>
+				</div>
+                <div class="form-group">
+					<label> Upper limit of Attendance range : </label>
+					<input type="text" name="ul" id="id3" class="form-control" autocomplete="off">
+					<span id="id4" class="text-danger font-weight-bold"> </span>
+				</div>
+				<input type="submit" name="submit" value="Submit" class="btn btn-success">
+			</form>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">		
+		function validation(){
+
+			var ll = document.getElementById('id1').value;
+			var ul = document.getElementById('id3').value;
+
+			if( ll == "" )
+			{
+				document.getElementById('id2').innerHTML = " ** please fill the lower limit...!!! ";
+				return false;
+			}
+			if(ll.length>2)
+			{
+				document.getElementById('id2').innerHTML = " ** attendance should be the length of two digit..!!!";
+				return false;
+             }
+			if(isNaN(ll))
+			 {
+				document.getElementById('id2').innerHTML = " ** Attendance should conatins only numeric digits...!!! ";
+				return false;
+			 }
+				
+			if( ul == "" )
+			{
+				document.getElementById('id4').innerHTML = " ** please fill the upper limit...!!! ";
+				return false;
+			}
+			if(ll.length>2){
+				document.getElementById('id4').innerHTML = " ** attendance should be the length of two digit..!!!";
+				return false;
+               }
+			   if(isNaN(ul)){
+				document.getElementById('id4').innerHTML = " ** Attendance should conatins only numeric digits...!!! ";
+				return false;
+			}
+		}
+
+	</script>
+</body>
+</html>
